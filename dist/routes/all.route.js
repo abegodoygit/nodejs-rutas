@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _express = require("express");
-var _usersControllers = require("../controllers/users.controllers.js");
+var _usuario = require("../controllers/usuario.controller");
 var _lineaController = require("../controllers/linea.controller.js");
 var _busController = require("../controllers/bus.controller.js");
 var _lugarController = require("../controllers/lugar.controller.js");
@@ -16,13 +16,21 @@ var _tarifaController = require("../controllers/tarifa.controller.js");
 var _destinoController = require("../controllers/destino.controller.js");
 var _coordenadaController = require("../controllers/coordenada.controller.js");
 var _rutaController = require("../controllers/ruta.controller.js");
+//import { addUser, delUser, getbyId, getUsers, updateUser } from '../controllers/users.controllers.js';
+
 var router = (0, _express.Router)();
-router.get('/usuario', _usersControllers.getUsers); //si ingresa a esa ruta ejecuta la funcion getUser importado desde UsuarioController
-router.get('/usuario/:id', _usersControllers.getbyId);
-router.post('/usuario', _usersControllers.addUser);
+
+/*router.get('/usuario',getUsers) //si ingresa a esa ruta ejecuta la funcion getUser importado desde UsuarioController
+router.get('/usuario/:id',getbyId)
+router.post('/usuario',addUser)
 //router.put('/usuario',updateUser)
-router.put('/usuario/:id', _usersControllers.updateUser);
-router["delete"]('/usuario/:id', _usersControllers.delUser);
+router.put('/usuario/:id',updateUser)
+router.delete('/usuario/:id',delUser)*/
+router.get('/usuario', _usuario.getUser); //si ingresa a esa ruta ejecuta la funcion getUser importado desde UsuarioController
+router.post('/usuario', _usuario.addUser);
+router.get('/usuario/:user', _usuario.getUserById);
+router["delete"]('/usuario/:user', _usuario.deleteUser);
+router.put('/usuario', _usuario.updateUser);
 router.get('/linea', _lineaController.getLinea);
 router.get('/linea/:num', _lineaController.getLineaById);
 router.post('/linea', _lineaController.addLinea);

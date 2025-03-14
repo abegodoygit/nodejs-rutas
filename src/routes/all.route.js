@@ -1,5 +1,6 @@
-import {Router} from 'express'
-import { addUser, delUser, getbyId, getUsers, updateUser } from '../controllers/users.controllers.js';
+import {Router} from 'express';
+import { addUser, deleteUser, getUser, getUserById, updateUser} from "../controllers/usuario.controller";
+//import { addUser, delUser, getbyId, getUsers, updateUser } from '../controllers/users.controllers.js';
 import { addLinea, deleteLinea, getLinea, getLineaAll, getLineaById, updateLinea } from '../controllers/linea.controller.js';
 import { addBus, deleteBus, getBus, getBuses, getBusLinea, updateBus } from '../controllers/bus.controller.js';
 import { addPlace, deletePlace, getPlace, updatePlace } from '../controllers/lugar.controller.js';
@@ -13,12 +14,18 @@ import { addRuta, deleteRuta, getRutaAdd, getRutaapp, getRutaEdit, getRutaShow, 
 
 const router=Router()
 
-router.get('/usuario',getUsers) //si ingresa a esa ruta ejecuta la funcion getUser importado desde UsuarioController
+/*router.get('/usuario',getUsers) //si ingresa a esa ruta ejecuta la funcion getUser importado desde UsuarioController
 router.get('/usuario/:id',getbyId)
 router.post('/usuario',addUser)
 //router.put('/usuario',updateUser)
 router.put('/usuario/:id',updateUser)
-router.delete('/usuario/:id',delUser)
+router.delete('/usuario/:id',delUser)*/
+router.get('/usuario',getUser) //si ingresa a esa ruta ejecuta la funcion getUser importado desde UsuarioController
+router.post('/usuario',addUser)
+router.get('/usuario/:user',getUserById)
+router.delete('/usuario/:user',deleteUser)
+router.put('/usuario',updateUser)
+
 
 router.get('/linea',getLinea)
 router.get('/linea/:num',getLineaById)
