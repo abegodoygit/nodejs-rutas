@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { addCoordenada, deleteCoordenada, getCoordenada, updateCoordenada } from "../controllers/coordenadaController";
+/*import { addCoordenada, deleteCoordenada, getCoordenada, updateCoordenada } from "../controllers/coordenadaController";
 import { addDestino, deleteDestino, getDestino, getDestinoinner, lineastodestino, searchdestin, updateDestino } from "../controllers/destinoController";
 import { addDia, deleteDia, getDia, updateDia } from "../controllers/diaController";
 import { addZona, deleteZona, getZona, updateZona } from "../controllers/zonaController";
@@ -22,7 +22,7 @@ const router=Router()
     res.setHeader("Access-Control-Allow-Headers", "content-type");
     res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
      });*/
-
+/*
 router.get('/linea',getLinea)
 router.get('/linea/:num',getLineaById)
 router.post('/linea',addLinea)
@@ -115,6 +115,7 @@ router.delete('/horario/:id',deleteHorario)
 router.get('/horario/:num',getHorapp)//retorna hora y nombre del dia
 
 
+*/
 
 
 
@@ -131,5 +132,4 @@ router.get('/horario/:num',getHorapp)//retorna hora y nombre del dia
 
 
 
-
-export default router
+//export default router
