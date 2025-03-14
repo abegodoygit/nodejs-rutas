@@ -5,24 +5,20 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _express = require("express");
+var _coordenadaController = require("../controllers/coordenadaController");
+var _destinoController = require("../controllers/destinoController");
+var _diaController = require("../controllers/diaController");
+var _zonaController = require("../controllers/zonaController");
+var _horarioController = require("../controllers/horarioController");
+var _lineaController = require("../controllers/lineaController");
+var _parada = require("../controllers/parada.controller");
+var _rutaController = require("../controllers/rutaController");
+var _tarifaController = require("../controllers/tarifaController");
+var _unidadController = require("../controllers/unidadController");
+var _pasajeController = require("../controllers/pasajeController");
 var _usuario = require("../controllers/usuario.controller");
-/*import { addCoordenada, deleteCoordenada, getCoordenada, updateCoordenada } from "../controllers/coordenadaController";
-import { addDestino, deleteDestino, getDestino, getDestinoinner, lineastodestino, searchdestin, updateDestino } from "../controllers/destinoController";
-import { addDia, deleteDia, getDia, updateDia } from "../controllers/diaController";
-import { addZona, deleteZona, getZona, updateZona } from "../controllers/zonaController";
-import { addHorario, deleteHorario, getHorario, getHorapp, updateHorario } from "../controllers/horarioController";
-import { addLinea, deleteLinea, getLinea, getLineaAll, getLineaById, updateLinea } from "../controllers/lineaController";
-import {addParada, getParadas, deleteParada, updateParada,getParadaUbic} from "../controllers/parada.controller";
-
-import { addRuta, deleteRuta, getRuta, getRutaAdd, getRutaapp, getRutaEdit, getRutaShow, updateRuta } from "../controllers/rutaController";
-import { addTarifa, deleteTarifa, getTarifa, getTarifaByLinea, getTarifaap, updateTarifa } from "../controllers/tarifaController";
-import { addUnidad, deleteUnidad, getUnidad, getUnidadById, getUnidadDet, getUnidadesLinea, updateUnidad } from "../controllers/unidadController";
-import { addPasaje, deletePasaje, getPasaje, updatePasaje} from "../controllers/pasajeController";
-*/
-
-/*import { addItinerario, deleteItinerario, getItinerario, getItinerByLinea, updateItinerario } from "../controllers/itinerarioController";
-import{getPlace,addPlace,updatePlace,deletePlace} from "../controllers/placeController";
-*/
+var _itinerarioController = require("../controllers/itinerarioController");
+var _placeController = require("../controllers/placeController");
 var router = (0, _express.Router)();
 /*router.get("/", (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
@@ -31,97 +27,82 @@ var router = (0, _express.Router)();
     res.setHeader("Access-Control-Allow-Headers", "content-type");
     res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
      });*/
-/*
-router.get('/linea',getLinea)
-router.get('/linea/:num',getLineaById)
-router.post('/linea',addLinea)
-router.put('/linea',updateLinea)
-router.delete('/linea/:id',deleteLinea)
-router.get('/lineas',getLineaAll)*/
 
+router.get('/linea', _lineaController.getLinea);
+router.get('/linea/:num', _lineaController.getLineaById);
+router.post('/linea', _lineaController.addLinea);
+router.put('/linea', _lineaController.updateLinea);
+router["delete"]('/linea/:id', _lineaController.deleteLinea);
+router.get('/lineas', _lineaController.getLineaAll);
 router.get('/usuario', _usuario.getUser); //si ingresa a esa ruta ejecuta la funcion getUser importado desde UsuarioController
 router.post('/usuario', _usuario.addUser);
 router.get('/usuario/:user', _usuario.getUserById);
 router["delete"]('/usuario/:user', _usuario.deleteUser);
 router.put('/usuario', _usuario.updateUser);
-/*
-router.get('/bus',getUnidad)// obtenemos todas las unidades
-router.get('/bus/:placa',getUnidadDet)//obtenemos la unidad por placa
-router.get('/bus/linea/:lin',getUnidadesLinea) // obtenemos todas las unidades de una linea
-router.post('/bus',addUnidad)
-router.put('/bus/:id',updateUnidad)//ponemos como parametro id la placa
-router.delete('/bus/:id',deleteUnidad)
-
-router.get('/lugar',getPlace)//todos los lugares de itinerario
-router.post('/lugar',addPlace)
-router.put('/lugar/:id',updatePlace)//pasamos como param el id
-router.delete('/lugar/:id',deletePlace)
-
-router.get('/itinerario',getItinerario)//todos la lista
-router.get('/itinerario/:linea',getItinerByLinea)//itinerario por linea
-router.post('/itinerario',addItinerario)
-router.put('/itinerario/:id',updateItinerario)
-router.delete('/itinerario/:id',deleteItinerario)
-
-router.get('/paradas',getParadas)
-router.post('/paradas',addParada)
+router.get('/bus', _unidadController.getUnidad); // obtenemos todas las unidades
+router.get('/bus/:placa', _unidadController.getUnidadDet); //obtenemos la unidad por placa
+router.get('/bus/linea/:lin', _unidadController.getUnidadesLinea); // obtenemos todas las unidades de una linea
+router.post('/bus', _unidadController.addUnidad);
+router.put('/bus/:id', _unidadController.updateUnidad); //ponemos como parametro id la placa
+router["delete"]('/bus/:id', _unidadController.deleteUnidad);
+router.get('/lugar', _placeController.getPlace); //todos los lugares de itinerario
+router.post('/lugar', _placeController.addPlace);
+router.put('/lugar/:id', _placeController.updatePlace); //pasamos como param el id
+router["delete"]('/lugar/:id', _placeController.deletePlace);
+router.get('/itinerario', _itinerarioController.getItinerario); //todos la lista
+router.get('/itinerario/:linea', _itinerarioController.getItinerByLinea); //itinerario por linea
+router.post('/itinerario', _itinerarioController.addItinerario);
+router.put('/itinerario/:id', _itinerarioController.updateItinerario);
+router["delete"]('/itinerario/:id', _itinerarioController.deleteItinerario);
+router.get('/paradas', _parada.getParadas);
+router.post('/paradas', _parada.addParada);
 //router.get('/paradas/:id',getParadaById)
-router.delete('/paradas/:id',deleteParada)
-router.put('/paradas/:id',updateParada)
-router.get('/paradas/:linea/:reco',getParadaUbic)//requiere como parametro linea y recorrido
+router["delete"]('/paradas/:id', _parada.deleteParada);
+router.put('/paradas/:id', _parada.updateParada);
+router.get('/paradas/:linea/:reco', _parada.getParadaUbic); //requiere como parametro linea y recorrido
 
-router.get('/ruta',getRuta)
-router.post('/ruta',addRuta)
-router.put('/ruta/:id',updateRuta)
-router.delete('/ruta/:id',deleteRuta)
-router.get('/rutaapp/:lin/:rec',getRutaapp)//para app movil
-router.get('/rutas/:lin',getRutaShow)//retorna solo las coordenadas de una ruta-para graficar
-router.get('/rutaed/:lin/:rec',getRutaEdit)
-router.get('/rutaad/:lin/:rec',getRutaAdd)
+router.get('/ruta', _rutaController.getRuta);
+router.post('/ruta', _rutaController.addRuta);
+router.put('/ruta/:id', _rutaController.updateRuta);
+router["delete"]('/ruta/:id', _rutaController.deleteRuta);
+router.get('/rutaapp/:lin/:rec', _rutaController.getRutaapp); //para app movil
+router.get('/rutas/:lin', _rutaController.getRutaShow); //retorna solo las coordenadas de una ruta-para graficar
+router.get('/rutaed/:lin/:rec', _rutaController.getRutaEdit);
+router.get('/rutaad/:lin/:rec', _rutaController.getRutaAdd);
+router.get('/coordenada', _coordenadaController.getCoordenada);
+router.post('/coordenada', _coordenadaController.addCoordenada);
+router.put('/coordenada/:id', _coordenadaController.updateCoordenada);
+router["delete"]('/coordenada/:id', _coordenadaController.deleteCoordenada);
+router.get('/zona', _zonaController.getZona);
+router.post('/zona', _zonaController.addZona);
+router.put('/zona/:id', _zonaController.updateZona);
+router["delete"]('/zona/:id', _zonaController.deleteZona);
+router.get('/destino', _destinoController.getDestino);
+router.post('/destino', _destinoController.addDestino);
+router.put('/destino/:id', _destinoController.updateDestino);
+router["delete"]('/destino/:id', _destinoController.deleteDestino);
+router.get('/destinos', _destinoController.getDestinoinner); //retorna nombre destino, zona y paradacerca
+router.get('/destino/:id', _destinoController.searchdestin); //retorna destinos similares al buscado
+router.get('/lineatodest/:id', _destinoController.lineastodestino); //lineas que van al destino
 
-router.get('/coordenada',getCoordenada)
-router.post('/coordenada',addCoordenada)
-router.put('/coordenada/:id',updateCoordenada)
-router.delete('/coordenada/:id',deleteCoordenada)
+router.get('/pasaje', _pasajeController.getPasaje);
+router.post('/pasaje', _pasajeController.addPasaje);
+router.put('/pasaje/:id', _pasajeController.updatePasaje);
+router["delete"]('/pasaje/:id', _pasajeController.deletePasaje);
+router.get('/tarifa', _tarifaController.getTarifa);
+router.post('/tarifa', _tarifaController.addTarifa);
+router["delete"]('/tarifa/:id', _tarifaController.deleteTarifa);
+router.put('/tarifa/:id', _tarifaController.updateTarifa);
+router.get('/tarifa/:linea', _tarifaController.getTarifaByLinea); //solo retorna de la tabla tarifa
+router.get('/tarifaap/:num', _tarifaController.getTarifaap); //retorna pasaje y desc para mostrar
 
-router.get('/zona',getZona)
-router.post('/zona',addZona)
-router.put('/zona/:id',updateZona)
-router.delete('/zona/:id',deleteZona)
-
-router.get('/destino',getDestino)
-router.post('/destino',addDestino)
-router.put('/destino/:id',updateDestino)
-router.delete('/destino/:id',deleteDestino)
-router.get('/destinos',getDestinoinner)//retorna nombre destino, zona y paradacerca
-router.get('/destino/:id',searchdestin)//retorna destinos similares al buscado
-router.get('/lineatodest/:id',lineastodestino)//lineas que van al destino
-
-router.get('/pasaje',getPasaje)
-router.post('/pasaje',addPasaje)
-router.put('/pasaje/:id',updatePasaje)
-router.delete('/pasaje/:id',deletePasaje)
-
-router.get('/tarifa',getTarifa)
-router.post('/tarifa',addTarifa)
-router.delete('/tarifa/:id',deleteTarifa)
-router.put('/tarifa/:id',updateTarifa)
-router.get('/tarifa/:linea',getTarifaByLinea)//solo retorna de la tabla tarifa
-router.get('/tarifaap/:num',getTarifaap)//retorna pasaje y desc para mostrar
-
-
-router.get('/dia',getDia)
-router.post('/dia',addDia)
-router.put('/dia/:id',updateDia)
-router.delete('/dia/:id',deleteDia)
-
-
-
-router.get('/horario',getHorario)
-router.post('/horario',addHorario)
-router.put('/horario/:id',updateHorario)
-router.delete('/horario/:id',deleteHorario)
-router.get('/horario/:num',getHorapp)//retorna hora y nombre del dia
-
-*/
+router.get('/dia', _diaController.getDia);
+router.post('/dia', _diaController.addDia);
+router.put('/dia/:id', _diaController.updateDia);
+router["delete"]('/dia/:id', _diaController.deleteDia);
+router.get('/horario', _horarioController.getHorario);
+router.post('/horario', _horarioController.addHorario);
+router.put('/horario/:id', _horarioController.updateHorario);
+router["delete"]('/horario/:id', _horarioController.deleteHorario);
+router.get('/horario/:num', _horarioController.getHorapp); //retorna hora y nombre del dia
 var _default = exports["default"] = router;

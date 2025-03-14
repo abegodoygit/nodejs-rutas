@@ -1,5 +1,5 @@
 import { Router } from "express";
-/*import { addCoordenada, deleteCoordenada, getCoordenada, updateCoordenada } from "../controllers/coordenadaController";
+import { addCoordenada, deleteCoordenada, getCoordenada, updateCoordenada } from "../controllers/coordenadaController";
 import { addDestino, deleteDestino, getDestino, getDestinoinner, lineastodestino, searchdestin, updateDestino } from "../controllers/destinoController";
 import { addDia, deleteDia, getDia, updateDia } from "../controllers/diaController";
 import { addZona, deleteZona, getZona, updateZona } from "../controllers/zonaController";
@@ -11,11 +11,9 @@ import { addRuta, deleteRuta, getRuta, getRutaAdd, getRutaapp, getRutaEdit, getR
 import { addTarifa, deleteTarifa, getTarifa, getTarifaByLinea, getTarifaap, updateTarifa } from "../controllers/tarifaController";
 import { addUnidad, deleteUnidad, getUnidad, getUnidadById, getUnidadDet, getUnidadesLinea, updateUnidad } from "../controllers/unidadController";
 import { addPasaje, deletePasaje, getPasaje, updatePasaje} from "../controllers/pasajeController";
-*/
 import { addUser, deleteUser, getUser, getUserById, updateUser} from "../controllers/usuario.controller";
-/*import { addItinerario, deleteItinerario, getItinerario, getItinerByLinea, updateItinerario } from "../controllers/itinerarioController";
+import { addItinerario, deleteItinerario, getItinerario, getItinerByLinea, updateItinerario } from "../controllers/itinerarioController";
 import{getPlace,addPlace,updatePlace,deletePlace} from "../controllers/placeController";
-*/
 const router=Router()
 /*router.get("/", (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
@@ -24,20 +22,20 @@ const router=Router()
     res.setHeader("Access-Control-Allow-Headers", "content-type");
     res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
      });*/
-/*
+
 router.get('/linea',getLinea)
 router.get('/linea/:num',getLineaById)
 router.post('/linea',addLinea)
 router.put('/linea',updateLinea)
 router.delete('/linea/:id',deleteLinea)
-router.get('/lineas',getLineaAll)*/
+router.get('/lineas',getLineaAll)
 
 router.get('/usuario',getUser) //si ingresa a esa ruta ejecuta la funcion getUser importado desde UsuarioController
 router.post('/usuario',addUser)
 router.get('/usuario/:user',getUserById)
 router.delete('/usuario/:user',deleteUser)
 router.put('/usuario',updateUser)
-/*
+
 router.get('/bus',getUnidad)// obtenemos todas las unidades
 router.get('/bus/:placa',getUnidadDet)//obtenemos la unidad por placa
 router.get('/bus/linea/:lin',getUnidadesLinea) // obtenemos todas las unidades de una linea
@@ -116,7 +114,7 @@ router.put('/horario/:id',updateHorario)
 router.delete('/horario/:id',deleteHorario)
 router.get('/horario/:num',getHorapp)//retorna hora y nombre del dia
 
-*/
+
 
 
 
