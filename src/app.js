@@ -1,7 +1,7 @@
 import express from 'express'
 import config from './config'
 //import paradasRoute from './routes/parada.route'
-import allroute from './routes/all.route'
+import userRoutes from './routes/user.route'
 const app=express()
 
 const cors = require('cors'); //para consumir api en desarrollo (solucionamos error de acceso al api) 
@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended:false}))//para recibir datos desde formular
 app.use(cors())
 
 //app.use(paradasRoute,paradasRoute)
-app.use(allroute,allroute)
+app.use(userRoutes,userRoutes)
 
 
 //const cors = require('cors');

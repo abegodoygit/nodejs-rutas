@@ -11,9 +11,11 @@ import { addRuta, deleteRuta, getRuta, getRutaAdd, getRutaapp, getRutaEdit, getR
 import { addTarifa, deleteTarifa, getTarifa, getTarifaByLinea, getTarifaap, updateTarifa } from "../controllers/tarifaController";
 import { addUnidad, deleteUnidad, getUnidad, getUnidadById, getUnidadDet, getUnidadesLinea, updateUnidad } from "../controllers/unidadController";
 import { addPasaje, deletePasaje, getPasaje, updatePasaje} from "../controllers/pasajeController";
+*/
 import { addUser, deleteUser, getUser, getUserById, updateUser} from "../controllers/usuario.controller";
-import { addItinerario, deleteItinerario, getItinerario, getItinerByLinea, updateItinerario } from "../controllers/itinerarioController";
+/*import { addItinerario, deleteItinerario, getItinerario, getItinerByLinea, updateItinerario } from "../controllers/itinerarioController";
 import{getPlace,addPlace,updatePlace,deletePlace} from "../controllers/placeController";
+*/
 const router=Router()
 /*router.get("/", (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
@@ -28,14 +30,14 @@ router.get('/linea/:num',getLineaById)
 router.post('/linea',addLinea)
 router.put('/linea',updateLinea)
 router.delete('/linea/:id',deleteLinea)
-router.get('/lineas',getLineaAll)
+router.get('/lineas',getLineaAll)*/
 
 router.get('/usuario',getUser) //si ingresa a esa ruta ejecuta la funcion getUser importado desde UsuarioController
 router.post('/usuario',addUser)
 router.get('/usuario/:user',getUserById)
 router.delete('/usuario/:user',deleteUser)
 router.put('/usuario',updateUser)
-
+/*
 router.get('/bus',getUnidad)// obtenemos todas las unidades
 router.get('/bus/:placa',getUnidadDet)//obtenemos la unidad por placa
 router.get('/bus/linea/:lin',getUnidadesLinea) // obtenemos todas las unidades de una linea
@@ -114,7 +116,6 @@ router.put('/horario/:id',updateHorario)
 router.delete('/horario/:id',deleteHorario)
 router.get('/horario/:num',getHorapp)//retorna hora y nombre del dia
 
-
 */
 
 
@@ -132,4 +133,5 @@ router.get('/horario/:num',getHorapp)//retorna hora y nombre del dia
 
 
 
-//export default router
+
+export default router

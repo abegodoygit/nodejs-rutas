@@ -1,4 +1,4 @@
-import {Router} from 'express';
+import { Router } from "express";
 import { addUser, deleteUser, getUser, getUserById, updateUser} from "../controllers/usuario.controller";
 //import { addUser, delUser, getbyId, getUsers, updateUser } from '../controllers/users.controllers.js';
 import { addLinea, deleteLinea, getLinea, getLineaAll, getLineaById, updateLinea } from '../controllers/linea.controller.js';

@@ -30,6 +30,6 @@ try{
   
 }
 
-export {sql};
+export {sql};//exportamos sql al controller
 
 //getConnection()
