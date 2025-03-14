@@ -58,5 +58,4 @@ function _getConnection() {
     }, _callee, null, [[0, 7]]);
   }));
   return _getConnection.apply(this, arguments);
-} //exportamos sql al controller
-//getConnection()
+} //getConnection()
