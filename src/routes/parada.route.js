@@ -1,4 +1,4 @@
-//import { Router } from "express";
+import { Router } from "express";
 //import {addParada, getParadas, deleteParada, updateParada} from "../controllers/parada.controller";
 //import {getUser} from "../controllers/usuario.controller";
 
@@ -16,4 +16,4 @@ router.get('/usuario/:id',getParadaById)
 router.delete('/usuario/:id',deleteParada)
 router.put('/usuario/:id',updateParada)
 */
-//export default router
+export default router
