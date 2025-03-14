@@ -1,0 +1,48 @@
+@api=http://localhost:3000/paradas
+
+
+###GET ALL PARADAS
+GET {{api}}
+
+
+### ADD NEW PARADA
+
+POST {{api}}
+Content-Type: application/json
+
+{   
+    "nomb_pd": "Parada de prueba Node"
+   
+}
+ //"lat_pd": "-13.154537382012",
+ //"lng_pd": "-74.223739842512"
+
+### GET PARADA BY ID
+GET {{api}}/109
+
+### GET PARADA BY linea and recorrid
+GET {{api}}/1/1
+
+### 
+
+ ### MODificar parada
+PUT {{api}}/188
+Content-Type: application/json
+
+{
+    "nomb_pd": "Parada updated Node"
+
+}
+     
+
+
+###Delete Parada
+ DELETE {{api}}/188
+
+
+
+
+
+
+
+

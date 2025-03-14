@@ -1,0 +1,40 @@
+
+@api=http://localhost:3000/pasaje
+
+###GET ALL data
+GET {{api}}
+
+
+### ADD NEW data
+
+POST {{api}}
+Content-Type: application/json
+
+ {
+   "tipo_pj": "Pasaje Node",
+  "descr_pj": "Hasta paradero final"
+}
+
+
+### MODificar data
+
+PUT {{api}}/11
+Content-Type: application/json
+
+{  
+  "tipo_pj": "Pasaje NodeJs",
+  "descr_pj": "Hasta y ultimo paradero"
+}
+     
+
+
+###Delete Parada
+ DELETE {{api}}/11
+
+
+
+
+
+
+
+

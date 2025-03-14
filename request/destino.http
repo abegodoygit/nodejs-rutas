@@ -1,0 +1,55 @@
+
+@api=http://localhost:3000/destino
+
+###GET ALL data
+GET {{api}}
+
+
+### ADD NEW data
+
+POST {{api}}
+Content-Type: application/json
+
+ {
+    "nombre_des": "Mi casa",
+    "zona_des": 1,
+    "parada_des": 3
+  }
+
+
+### MODificar data
+
+PUT {{api}}/306
+Content-Type: application/json
+
+{
+    "nombre_des": "Mi otra casa",
+    "zona_des": 2,
+    "parada_des": 5
+}
+     
+
+
+###Delete Parada
+ DELETE {{api}}/1008
+
+
+@apiiner=http://localhost:3000/destinos
+
+###GET ALL data
+GET {{apiiner}}
+
+
+###resultado de la busqueda
+GET {{api}}/carmen
+
+##lineas que van al destino(param idParada)
+@apitodest=http://localhost:3000/lineatodest
+
+###GET ALL data
+GET {{apitodest}}/3
+
+
+
+
+

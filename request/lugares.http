@@ -1,0 +1,39 @@
+
+//@api=http://localhost:4000/place
+@api=http://localhost:3000/lugar
+
+###GET ALL data
+GET {{api}}
+
+
+### ADD NEW data
+
+POST {{api}}
+Content-Type: application/json
+
+ {
+   "nombre_lg": "Lugar de prueba Node"
+  }
+
+
+### MODificar data
+
+PUT {{api}}/300
+Content-Type: application/json
+
+{
+"nombre_lg": "Lugar updated Node"
+}
+     
+
+
+###Delete Data by id
+ DELETE {{api}}/302
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+
+@api=http://localhost:3000/horario
+
+###GET ALL 
+GET {{api}}
+
+
+### ADD NEW 
+
+POST {{api}}
+Content-Type: application/json
+
+ {
+   "HoraInicio": "05:06:00",
+    "HoraFinal": "05:05:00",
+    "hdia": 1,
+    "hlinea": 21
+  }
+
+
+### MODificar data
+
+PUT {{api}}/131
+Content-Type: application/json
+
+{
+  "HoraInicio": "09:01:00",
+    "HoraFinal": "21:00:00"
+  //  "hdia": 2,
+   //"hlinea": 2
+}
+     
+
+
+###Delete 
+ DELETE {{api}}/130
+
+
+###GET horario and nom dia
+GET {{api}}/21
+
+
+
+
+

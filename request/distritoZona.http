@@ -1,0 +1,38 @@
+
+@api=http://localhost:3000/zona
+
+###GET ALL data
+GET {{api}}
+
+
+### ADD NEW data
+
+POST {{api}}
+Content-Type: application/json
+
+ {
+    "nombre_zn": "Quinuapata"
+  }
+
+
+### MODificar data
+
+PUT {{api}}/16
+Content-Type: application/json
+
+{
+"nombre_zn": "new Quinuapata"
+}
+     
+
+
+###Delete Data by id
+ DELETE {{api}}/15
+
+
+
+
+
+
+
+

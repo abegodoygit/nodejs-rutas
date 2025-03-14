@@ -1,0 +1,57 @@
+
+//@api=http://192.168.1.12:3000/usuario
+@api=http://localhost:3000/usuario
+
+###GET ALL usuarios
+GET {{api}}
+
+
+### ADD NEW usuario
+
+POST {{api}}
+Content-Type: application/json
+
+ {
+    "usuar": "nodeJs",
+    "clave": "nodemon",
+    "nombre": "Sofia",
+    "apellidos": "Navarro Palomino",
+    "correo": "sofiaJh2021@gmail.com",
+    "foto": "",
+    "tipo_cuenta":"Facebook"
+    
+  }
+//{
+  //  "nomParada": "parada nodejss"
+//}
+### GET usuario BY ID
+GET {{api}}/sofy
+
+### 
+
+ ### update user datos
+PUT {{api}}
+Content-Type: application/json
+
+{
+   "usuar": "mayu",
+    "clave": "654321",
+    "nombre": "user new",
+    "apellidos": "last name test",
+     "correo": "sofiaJh2021@gmail.com",
+    "foto": ""     
+
+}
+     
+
+
+###Delete Parada
+ DELETE {{api}}/mayus
+
+
+
+
+
+
+
+

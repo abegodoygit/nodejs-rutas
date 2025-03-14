@@ -1,0 +1,68 @@
+
+@api=http://localhost:3000/linea
+
+###GET ALL data
+GET {{api}}
+
+
+### ADD NEW data
+
+POST {{api}}
+Content-Type: application/json
+
+ {   
+    "numero": 22,
+    "name_emp": "ETP Prueba node SAC",
+    "desc_emp": "descripcion de la linea 9",
+    "img_emp": "http://www.enrutaappi.somee.com/Imagenes/busauto.png",
+    "tel_emp": "9911679239",
+    "email_emp": "linea9ayacucho@gmail.com",
+    "direc_emp": "Jr. Lima N° 122",
+    "cant_unidades": 10,
+    "color_emp": "blanco-morado",
+    "ubic_lat": "-13.148859492299",
+    "ubic_lng": "-74.22274440999"
+  }
+
+
+### MODificar data
+
+PUT {{api}}
+Content-Type: application/json
+
+{
+    "numero": 22,
+    "name_emp": "ETPU Node JS",
+    "desc_emp": "descripcion de la linea 22",
+    "img_emp": "http://www.enrutaappi.somee.com/Imagenes/busauto.png",
+    "tel_emp": "9911679210",
+    "email_emp": "linea22ayacucho@gmail.com",
+    "direc_emp": "Jr. Lima N° 132",
+    "cant_unidades": 20,
+    "color_emp": "blanco-amarillo",
+    "ubic_lat": "-13.148859492210",
+    "ubic_lng": "-74.22274440910"
+}
+     
+
+
+###GET ALL data
+GET {{api}}/11
+
+
+
+
+###Delete Data by id
+ DELETE {{api}}/
+
+
+
+
+
+
+
+
+
+
+
+

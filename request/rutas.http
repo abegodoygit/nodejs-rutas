@@ -1,0 +1,76 @@
+
+@api=http://localhost:3000/ruta
+
+
+###GET ALL data
+GET {{api}}
+
+
+### ADD NEW data
+
+POST {{api}}
+Content-Type: application/json
+
+ {   
+    "orden": 102,
+    "recorrido": 2,
+    "esparada": "si",
+    "coord": 476,
+    "linea": 21
+  }
+
+
+### MODificar data
+
+PUT {{api}}/3270
+Content-Type: application/json
+
+{
+   "orden": 102,
+    //"recorrido": 2,
+    //"esparada": "si",
+    "coord": 476
+   // "linea": 21
+}
+     
+###GET ALL data
+GET {{api}}/1/1
+
+###Delete Data by id
+ DELETE {{api}}/940
+
+
+###------------------------------------------------###
+@apishow=http://localhost:3000/rutas
+
+###GET rutas para graficar
+
+GET {{apishow}}/2
+
+
+###------------------------------------------------###
+@apied=http://localhost:3000/rutaed
+
+###GET rutas para graficar
+
+GET {{apied}}/11/1
+
+###------------------------------------------------###
+@apiad=http://localhost:3000/rutaad
+
+###GET rutas para graficar
+
+GET {{apiad}}/11/2
+
+###------------------------------------------------###
+@apiap=http://localhost:3000/rutaapp
+
+###GET rutas para graficar en app movil
+
+GET {{apiap}}/11/1
+
+
+
+
+
+

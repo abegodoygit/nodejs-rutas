@@ -1,0 +1,38 @@
+
+@api=http://localhost:3000/dia
+
+###GET ALL data
+GET {{api}}
+
+
+### ADD NEW data
+
+POST {{api}}
+Content-Type: application/json
+
+ {
+   "nombre_ds": "Dia de la Bandera"
+  }
+
+
+### MODificar data
+
+PUT {{api}}/11
+Content-Type: application/json
+
+{
+   "nombre_ds": "Dia de la independencia"
+}
+     
+
+
+###Delete Parada
+ DELETE {{api}}/11
+
+
+
+
+
+
+
+

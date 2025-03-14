@@ -1,0 +1,68 @@
+
+//@api=http://localhost:4000/unidad
+@api=http://localhost:3000/bus
+###GET ALL data
+GET {{api}}
+
+
+### ADD NEW data
+
+POST {{api}}
+Content-Type: application/json
+
+ {   
+    "placa_ut": "AAA-001",
+    "año_ut": "2024",
+    "categ_ut": "M3",
+    "marca_ut": "Tesla",
+    "estado_ut": "Fuera de servicio",
+    "propietar_ut": "Paitan Martinez, Anyela",
+    "capac_ut": 30,
+    "tipo_ut": "megaBus",
+    "current_lat": "-13.1499",
+    "current_lng": "-74.2229",
+    "linea_ut": 17
+  }
+
+
+### MODificar data
+
+PUT {{api}}/AAB-002
+Content-Type: application/json
+
+
+ {   
+    //"placa_ut": "AAA-001",
+    "año_ut": "2025",
+    "categ_ut": "M6",
+    "marca_ut": "Tesla5",
+    "estado_ut": "Fuera de servicio",
+    "propietar_ut": "Paitan Martiz, Anyela",
+    "capac_ut": 30,
+    "tipo_ut": "megaBuz",
+  //  "current_lat": "-13.1499",
+  //  "current_lng": "-74.2229",
+   // "linea_ut": 17
+  }
+     
+###GET Unidad bY placa
+GET {{api}}/ZZZ-001
+
+
+###GET all unidades of linea
+GET {{api}}/linea/1
+
+###Delete Data by id
+ DELETE {{api}}/AAA-001
+
+
+
+
+
+
+
+
+
+
+
+

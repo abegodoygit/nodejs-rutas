@@ -1,0 +1,43 @@
+
+@api=http://localhost:3000/coordenada
+
+###GET ALL data
+GET {{api}}
+
+
+### ADD NEW data
+
+POST {{api}}
+Content-Type: application/json
+
+ {
+    "coordId": 733,
+    "lat_cor": "-13.149459891005099",
+    "lng_cor": "-74.231888987123895",
+    "parada_cor": 1
+  }
+
+
+### MODificar data
+
+PUT {{api}}/733
+Content-Type: application/json
+
+{
+     "lat_cor": "-13.14945",
+    "lng_cor": "-74.231800",
+    "parada_cor": 2
+}
+     
+
+
+###Delete Parada
+ DELETE {{api}}/733
+
+
+
+
+
+
+
+

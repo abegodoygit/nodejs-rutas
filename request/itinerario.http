@@ -1,0 +1,47 @@
+
+@api=http://localhost:3000/itinerario
+
+###GET ALL data
+GET {{api}}
+
+###GET data by linea
+GET {{api}}/21
+
+### ADD NEW data
+
+POST {{api}}
+Content-Type: application/json
+
+ {    
+    "recorrido_it": 2,
+    "orden_it": 31,
+    "linea_it": 21,
+    "lugar_it": 11
+  }
+
+
+### MODificar data
+
+PUT {{api}}/968
+Content-Type: application/json
+
+{
+  "recorrido_it": 1,
+    "orden_it": 27,
+    "linea_it": 21,
+    "lugar_it": 1
+
+}
+     
+
+
+###Delete 
+ DELETE {{api}}/970
+
+
+
+
+
+
+
+

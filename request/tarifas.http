@@ -1,0 +1,44 @@
+
+@api=http://localhost:3000/tarifa
+
+###GET ALL data
+GET {{api}}
+
+### ADD NEW data
+
+POST {{api}}
+Content-Type: application/json
+
+ {
+  "costo": 0.9,
+    "tpasaje": 1,
+    "tlinea": 21
+  }
+
+### MODificar data
+
+PUT {{api}}/57
+Content-Type: application/json
+
+{
+  "costo": 0.95
+   // "tpasaje": 2,
+  //  "tlinea": 20
+
+}
+     
+###Delete 
+ DELETE {{api}}/55
+
+
+###GET tarifa by id- tabla Tarifa by linea
+GET {{api}}/1
+
+##////...para app - muestra pasaje y descrip
+
+@apiapp=http://localhost:3000/tarifaap
+
+###GET tarifa linea
+GET {{apiapp}}/1
+
+
