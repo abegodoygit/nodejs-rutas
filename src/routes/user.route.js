@@ -36,7 +36,7 @@ router.get('/usuario/:user',getUserById)
 router.delete('/usuario/:user',deleteUser)
 router.put('/usuario',updateUser)
 
-router.get('/buses',getUnidad)// obtenemos todas las unidades
+router.get('/buz',getUnidad)// obtenemos todas las unidades
 router.get('/bus/:placa',getUnidadDet)//obtenemos la unidad por placa
 router.get('/bus/linea/:lin',getUnidadesLinea) // obtenemos todas las unidades de una linea
 router.post('/bus',addUnidad)
